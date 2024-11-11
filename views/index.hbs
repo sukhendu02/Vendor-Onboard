@@ -1,13 +1,120 @@
-<!-- views/index.hbs -->
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{>headerlinks}}
+
+    <title>Welcome</title>
+
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+
 </head>
+
 <body>
-  <h1>{{message}}</h1>
-  <p>This is a simple page rendered using Handlebars and Express.</p>
+    {{>navbar}}
+
+    <div class="container">
+        <div class="hero-section">
+            <div>
+
+                <h1>Start Selling and Growing with Us!
+                </h1>
+            </div>
+            <h6 class="pt-4">Join our gifting marketplace where thousands of customers are looking for products like
+                yours.</h6>
+
+            <div class="action-btn-container">
+                <button class="action-btn">Register with us now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="pitch-section d-flex">
+            <div style="display: flex; align-items:center; width:50%;margin-right:8px">
+
+            <h3>Why parter with us?</h3>
+            </div>
+            <div class="features-us">
+
+
+
+
+
+
+
+
+
+                <div class="parent">
+                    <div class="div1">
+                        <div>
+                            <h6>Lowest Commission Promised!</h6>
+                            <p>Maximize your profits with low commission rates that prioritize your growth</p>
+                        </div>
+                    </div>
+                    <div class="div2">
+                        <div>
+                            <h6>Unlimited Products</h6>
+                            <p>No limit of the products. Setup your store as you want.</p>
+                        </div>
+                    </div>
+                    <div class="div3">
+                        <div>
+                            <h6>Broad Reach</h6>
+                            <p>Expand your reach to thousands of customers looking for unique gifts for every occasion.</p>
+                        </div>
+                    </div>
+                    <div class="div4">
+                        <div>
+                            <h6>For small, Medium to Large Business</h6>
+                            <p>Whether you’re just starting or are an established business we are here for you!</p>
+                        </div>
+                    </div>
+                    <div class="div5">
+                        <div>
+                            <h6>Support at Every Step</h6>
+                            <p>From onboarding to selling, our dedicated vendor support team is here for you.</p>
+                        </div>
+                    </div>
+                    <div class="div6">
+                            <div>
+                            <h6>Easy-to-Use Platform</h6>
+                            <p>Start selling quickly with our user-friendly setup and management tools, perfect for any skill level.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="container">
+    <div class="section my-4 p-5">
+        <div class="non-registerd">
+            <h4 class="text-center">Dedicated support to Non-Registered business and indiviuals.</h4>
+            <p class="text-center">Not Registerd? No Problem.</p>
+
+            <p class="text-center p-2 pt-4" style="">Perfect for hobbyists, crafters, and anyone with a passion!</p>
+
+            <div class="indiv d-flex p-5">
+                <h6>No Business Registration Required</h6>
+                <h6>Grow at Your Own Pace</h6>
+                <h6>Easy Start-Up Process</h6>
+                <h6>Supportive Community</h6>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="/js/script.js"></script>
+
 </body>
+
 </html>
