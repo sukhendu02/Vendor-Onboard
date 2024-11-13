@@ -240,7 +240,12 @@ body.dark .search-field i{
     color: var(--text-color);
 } */
 
-
+a:focus, 
+a:active,
+a:focus-visible {
+  outline: none;
+  box-shadow: none; /* Removes the glowing shadow */
+}
 
 button.cta-btn{
     border-radius: 12px;
