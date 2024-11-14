@@ -155,7 +155,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  
 }
 .form-container {
   padding: 30px;
@@ -240,7 +239,8 @@ label:last-child span {
   margin: 16px;
 }
 
-.svg-design {
+.svg-design,
+.bind-container {
   background-color: var(--primary-color);
 }
 .custom-shape-divider-top-1731587920 {
@@ -251,8 +251,6 @@ label:last-child span {
   overflow: hidden;
   line-height: 0;
 }
-
-
 
 .custom-shape-divider-top-1731587920 .shape-fill {
   fill: #fff;
