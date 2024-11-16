@@ -1,10 +1,20 @@
 :root {
   --primary-color: #ff7d1a;
+  --secondary-color: #EA9841;
+  --primary-acent: #4DB6AC;
+
   --side-nav: #010718;
   --text-color: #1f1f1f;
   --search-bar: #f2f2f2;
   /* --search-text: #010718; */
   --secondary-text: #fff;
+}
+
+lottie-player {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  margin-top: -14%;
 }
 .hero-section {
   height: 100vh;
@@ -303,6 +313,45 @@ label:last-child span {
   background-color: var(--primary-color);
   color: var(--secondary-text);
 }
+
+
+
+/* Outer Container */
+.text-slider-1 {
+  overflow: hidden; /* Hides items outside the container */
+  position: relative;
+  width: 100%; /* Adjust based on your design */
+  height: 50px; /* Height of the text slider */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+}
+
+/* Inner Sliding Container */
+.text-items-1 {
+  display: flex;
+  gap: 50px; /* Space between text items */
+  animation: infinite-slide 10s linear infinite; /* Infinite sliding animation */
+}
+
+/* Styling for Text Items */
+.text-items-1 span {
+  font-size: 1.5rem;
+  white-space: nowrap; /* Prevents wrapping of text */
+  color: #333;
+}
+
+/* Keyframes for Infinite Sliding */
+@keyframes infinite-slide {
+  0% {
+    transform: translateX(100%); /* Start off-screen on the right */
+  }
+  100% {
+    transform: translateX(-100%); /* Move off-screen on the left */
+  }
+}
+
 
 @media only screen and (max-width: 480px) {
   .hero-section {
