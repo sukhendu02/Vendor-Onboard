@@ -14,7 +14,7 @@ lottie-player {
   position: absolute;
   width: 60%;
   z-index: -1;
-  opacity: 0.6;
+  /* opacity: 0.6; */
   margin-top: -20%;
 }
 .hero-section {
@@ -27,6 +27,7 @@ lottie-player {
 
 .hero-section h1 {
   /* color: var(--); */
+  font-weight: bold;
   color: antiquewhite;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--secondary-color);
@@ -719,7 +720,7 @@ label:last-child span {
   lottie-player {
     position: absolute;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.8;
     margin-top: -80%;
     width: 100%;
   }
