@@ -6,7 +6,7 @@ const hbs = require("hbs");
 const app = express();
 const PORT = 3000;
 
-// Set the view engine to hbs
+// Set the viewsdf engine to hbs
 app.set("view engine", "hbs");
 
 // Set the views directory

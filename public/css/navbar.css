@@ -93,10 +93,12 @@ nav .nav-bar .logo a {
 .nav-links li a {
   position: relative;
   font-size: 17px;
-  font-weight: 400;
-  color: var(--text-color);
+  /* font-weight: 400; */
+  /* color: var(--text-color); */
   text-decoration: none;
   padding: 10px;
+  color: #ff7d1a;
+  font-weight: 500;
 }
 
 /* .nav-links li a::before{
@@ -281,11 +283,11 @@ button.cta-btn:hover {
   .menu {
     position: fixed;
     height: 100%;
-    width: 320px;
+    width: 100%;
     left: -100%;
     top: 0;
     padding: 20px;
-    background-color: var(--side-nav);
+    background-color: #fff;
     z-index: 100;
     transition: all 0.4s ease;
   }
@@ -316,10 +318,15 @@ button.cta-btn:hover {
   .nav-bar .nav-links {
     flex-direction: column;
     padding-top: 30px;
+    padding-left: 0;
   }
 
   .nav-links li a {
     display: block;
     margin-top: 20px;
+    color: #ff7d1a;
+    font-weight: 600;
+  }
+  .menu {
   }
 }
