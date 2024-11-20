@@ -633,34 +633,30 @@ label:last-child span {
     transform: translate3d(0, -25%, 0);
   }
 }
-
-/* SLIDING TEXT ANIMATION */
-.scroll {
-  white-space: nowrap;
-  margin: 0 2em;
+.marquee-text {
+  overflow: clip;
 }
-.scroll div {
+
+.marquee-text-track {
   display: flex;
-  gap: 2em;
-}
-.scroll p {
-  /* font-size: 5em; */
-  font-size: 20px;
-  /* color: var(--primary-acent); */
-  line-height: 10px;
-  margin-bottom: 0;
+  padding-left: 4.8rem;
+  gap: 4.8rem;
+  width: max-content;
+  animation: marquee-move-text var(--speed, 10s) linear infinite var(
+      --direction,
+      forwards
+    );
 }
 
-.RightToLeft {
-  animation: RightToLeft 10s infinite;
-  animation-timing-function: linear;
-  background-color: #f0f0f0;
-  padding: 12px;
+.marquee-text p {
+  border: 1px solid white;
+  background-color: #ebe9e9;
+  border-radius: 999px;
+  padding: 1rem 2.5rem;
+  color: var(--primary-color);
 }
-@keyframes RightToLeft {
-  from {
-    transform: translateX(0);
-  }
+
+@keyframes marquee-move-text {
   to {
     transform: translateX(-50%);
   }
