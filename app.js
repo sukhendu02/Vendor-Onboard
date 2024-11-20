@@ -4,8 +4,14 @@ const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
 const app = express();
+const mongoose = require("mongoose");
+var bodyParser = require("body-parser");
 const PORT = 3000;
 
+// MODALS IMPORT
+const leadForm = require("./modals/leadFrom");
+
+const formRoute = require("./Routes/formRoute");
 // Set the viewsdf engine to hbs
 app.set("view engine", "hbs");
 

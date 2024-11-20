@@ -29,6 +29,7 @@ lottie-player {
   /* color: var(--); */
   font-weight: bold;
   color: antiquewhite;
+  /* font-size: 35px; */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--secondary-color);
 }
@@ -633,10 +634,46 @@ label:last-child span {
   }
 }
 
+/* SLIDING TEXT ANIMATION */
+.scroll {
+  white-space: nowrap;
+  margin: 0 2em;
+}
+.scroll div {
+  display: flex;
+  gap: 2em;
+}
+.scroll p {
+  /* font-size: 5em; */
+  font-size: 20px;
+  /* color: var(--primary-acent); */
+  line-height: 10px;
+  margin-bottom: 0;
+}
+
+.RightToLeft {
+  animation: RightToLeft 10s infinite;
+  animation-timing-function: linear;
+  background-color: #f0f0f0;
+  padding: 12px;
+}
+@keyframes RightToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .hero-section {
     text-align: center;
     /* margin-top: -50px; */
+  }
+  .hero-section h1 {
+    font-size: 35px;
+    /* line-height: 1.5; */
   }
 
   .pitch-section {
