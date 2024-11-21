@@ -5,21 +5,28 @@ const path = require("path");
 const hbs = require("hbs");
 const app = express();
 const mongoose = require("mongoose");
-var bodyParser = require("body-parser");
 const PORT = 3000;
+
+var bodyParser = require("body-parser");
+//  BODY PARSER
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(bodyParser.json());
 
 // MODALS IMPORT
 const leadForm = require("./modals/leadFrom");
 
 // ROUTES IMPORT
-
+////////
 // const formRoute = require("./Routes/formRoute");
-const formRoute =require('./Routes/formRoute')(app)
+const formRoute = require("./Routes/formRoute")(app);
 
-
-
-const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://sukhendu:sukhendu@project1.ccrjnjw.mongodb.net/?retryWrites=true&w=majority&appName=Project1";
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const uri =
+  "mongodb+srv://sukhendu:sukhendu@project1.ccrjnjw.mongodb.net/?retryWrites=true&w=majority&appName=Project1";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -27,7 +34,7 @@ const client = new MongoClient(uri, {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
-  }
+  },
 });
 
 async function run() {
@@ -36,7 +43,9 @@ async function run() {
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    console.log(
+      "Pinged your deployment. You successfully connected to MongoDB!"
+    );
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
@@ -44,17 +53,10 @@ async function run() {
 }
 run().catch(console.dir);
 
-
 // Set the viewsdf engine to hbs
 app.set("view engine", "hbs");
 
-
-
 // MongoDB Connection
-
-
-
-
 
 // Set the views directory
 app.set("views", path.join(__dirname, "views"));

@@ -268,11 +268,21 @@ button.cta-btn {
   background-color: var(--primary-color);
   color: #ffffff;
 }
+button.cta-btn a {
+  color: #ffffff;
+  text-decoration: none;
+  /* font-weight: 500; */
+}
+button.cta-btn a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+  /* font-weight: 500; */
+}
 
 button.cta-btn:hover {
   border: 1px solid var(--primary-color);
   background-color: #ffffff;
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 @media (max-width: 790px) {

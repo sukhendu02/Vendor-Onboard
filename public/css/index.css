@@ -42,6 +42,12 @@ lottie-player {
   padding: 12px;
   margin: 12px;
 }
+.action-btn:hover,
+.action-btn:focus {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: 2px solid var(--secondary-color);
+}
 .pitch-section {
   justify-content: space-evenly;
 }
@@ -635,25 +641,41 @@ label:last-child span {
 }
 .marquee-text {
   overflow: clip;
+  padding: 8px;
+  width: 100%;
 }
-
+.marquee-text-track i,
+.marquee-text-track-2 i {
+  color: var(--primary-acent);
+  font-size: 20px;
+  box-shadow: 0 0 10px var(--primary-acent);
+  border-radius: 50%;
+}
 .marquee-text-track {
   display: flex;
   padding-left: 4.8rem;
   gap: 4.8rem;
   width: max-content;
-  animation: marquee-move-text var(--speed, 10s) linear infinite var(
-      --direction,
-      forwards
-    );
+  animation: marquee-move-text var(--speed, 10s) linear infinite
+    var(--direction, forwards);
+}
+.marquee-text-track-2 {
+  display: flex;
+  padding-left: 4.8rem;
+  gap: 4.8rem;
+  width: max-content;
+  animation: marquee-move-text var(--speed, 10s) linear infinite
+    var(--direction, reverse);
 }
 
 .marquee-text p {
   border: 1px solid white;
-  background-color: #ebe9e9;
+  background-color: #eeeeee;
   border-radius: 999px;
   padding: 1rem 2.5rem;
+  font-weight: 500;
   color: var(--primary-color);
+  box-shadow: 0 0 3px #fff;
 }
 
 @keyframes marquee-move-text {

@@ -43,7 +43,7 @@
                 yours.</h6>
 
             <div class="action-btn-container">
-                <button class="action-btn">Register with us now</button>
+               <a href="#explore"> <button class="action-btn"> Explore More</button></a>
             </div>
         </div>
     </div>
@@ -189,80 +189,54 @@
     </div>
 
 
-    <div class="container-feature">
+    <div id="explore" class="container-feature">
         <div class="features">
-            <h3 class="text-center">Features and Benifits</h3>
-            <div class="card-container-1 d-flex">
+            <h3 class="text-center text-light fw-bold">Features and Benifits</h3>
+            <div class="card-container-1 d-flex my-5">
 
 <div class="marquee-text">
   <div class="marquee-text-track">
-    <p>JavaScript</p>
-    <p>TypeScript</p>
-    <p>CSS</p>
-    <p>TailwindCSS</p>
-    <p>Accessibility</p>
-    <p>React</p>
-    <p>Angular</p>
-    <p aria-hidden="true">JavaScript</p>
-    <p aria-hidden="true">TypeScript</p>
-    <p aria-hidden="true">CSS</p>
-    <p aria-hidden="true">TailwindCSS</p>
-    <p aria-hidden="true">Accessibility</p>
-    <p aria-hidden="true">React</p>
-    <p aria-hidden="true">Angular</p>
+    <p><i class="fa-solid fa-circle-check"></i> Easy Store Setup</p>
+    <p><i class="fa-solid fa-circle-check"></i> Vendor First Approch</p>
+    <p><i class="fa-solid fa-circle-check"></i> Real Time Dashboard</p>
+    <p><i class="fa-solid fa-circle-check"></i> Multiple Payment Options</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Easy Store Setup</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Vendor First Approch</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Real Time Dashboard</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Multiple Payment Options</p>
+   
+  </div>
+</div>
+<div class="marquee-text">
+  <div class="marquee-text-track-2">
+    <p><i class="fa-solid fa-circle-check"></i> Easy Payouts</p>
+    <p><i class="fa-solid fa-circle-check"></i> No Limits on Products</p>
+    <p><i class="fa-solid fa-circle-check"></i> Full access to Features</p>
+    <p><i class="fa-solid fa-circle-check"></i> Inventory management</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Easy Payouts</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> No Limits on Products</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Full access to Features</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Inventory management</p>
+   
+  </div>
+</div>
+<div class="marquee-text">
+  <div class="marquee-text-track">
+    <p><i class="fa-solid fa-circle-check"></i> Multiple Catagoires</p>
+    <p><i class="fa-solid fa-circle-check"></i> Broad Audience</p>
+    <p><i class="fa-solid fa-circle-check"></i> Easy Customization</p>
+    <p><i class="fa-solid fa-circle-check"></i> Unilimited Coupons</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Multiple Catagoires</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Broad Audience</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Easy Customisation</p>
+    <p aria-hidden="true"><i class="fa-solid fa-circle-check"></i> Unilimited Coupons</p>
+   
   </div>
 </div>
 
-<div class="scroll">
-<div class="RightToLeft">
-    <p>Easy Store Setup</p>
-    <p>Vendor First Approch</p>
-    <p>Real Time Dashboard</p>
-    <p>Multiple Payment option</p>
-</div>
-</div>
-                <div class="text-slider-1">
-  <div class="text-items-1">
 
-
-                <span class="card-f">
-                    Easy Store Setup
-                </span>
-                <span class="card-f">
-                    Vendor First Approch
-                </span>
-                <span class="card-f">
-                    Real Time Dashboard
-                </span>
-                <span class="card-f">
-                    Multiple Payment option
-                </span>
-
-                </div>
-                </div>
-                
-                
-                               <span class="card-f">
-                    Easy Payout
-                </span>
-                <span class="card-f">
-                    No limits on products
-                </span>
-                <span class="card-f">
-                    Multiple Catagoires
-                </span>
-                <span class="card-f">
-                    Broad Audience
-                </span>
-                <span class="card-f">
-                    Full Access to the Features
-                </span>
-                <span class="card-f">
-                    Easy Customization of Products
-                </span>
-                <span class="card-f">
-                    Inventory management
-                </span>
+     
+    
             </div>
         </div>
     </div>
@@ -357,24 +331,24 @@
                 today!</h6>
 
             </div>
-            <div class="form-container">
-                <div class="form">
+            <div id="form" class="form-container">
+                <div  class="form">
                     <h5 class="text-center">Fill out the below form! We will get back to you!</h5>
-                    <form class="px-5 py-3" action="#">
+                    <form class="px-5 py-3" action="/leadform" method="POST">
                         <div class="p-2">
-                            <input placeholder="Name*" type="text" name="text" class="input-cta">
+                            <input placeholder="Name*" type="text" name="bname" class="input-cta"  >
 
                         </div>
                         <div class="p-2">
-                            <input placeholder="Bussiness Email*" type="email" name="text" class="input-cta">
+                            <input placeholder="Bussiness Email*" type="email" name="b_email" class="input-cta">
 
                         </div>
                         <div class="p-2">
-                            <input placeholder="Phone*" type="phone" name="text" class="input-cta">
+                            <input placeholder="Phone*" type="phone" name="phone" class="input-cta">
 
                         </div>
                         <div class="p-2">
-                            <input placeholder="Best Selling Product (Any one)" type="text" name="text" class="input-cta">
+                            <input placeholder="Best Selling Product (Any one)" type="text" name="productBS" class="input-cta">
 
                         </div>
                 
@@ -384,22 +358,22 @@
                                     <label for="">Business Type*</label>
                                 <div>
                                     <label>
-                                        <input type="radio" name="radio" checked="">
+                                        <input type="radio" name="b_type" checked="">
                                         <span>Registerd</span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="radio">
+                                        <input type="radio" name="b_type">
                                         <span>Non-Registered</span>
                                     </label>
                                     <label>
-                                        <input type="radio" name="radio">
+                                        <input type="radio" name="b_type">
                                         <span>Indiviual</span>
                                     </label>
 
                                 </div>
                             </div>
                                     <div class="p-2">
-                            <textarea placeholder="Additional Information" rows="4"  name="text" class="input-cta"></textarea>
+                            <textarea placeholder="Additional Information" rows="4"  name="info" class="input-cta"></textarea>
 
                         </div>
                         </div>
