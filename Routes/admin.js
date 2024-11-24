@@ -22,18 +22,24 @@ const cookieParser = require('cookie-parser');
 const adminauth = require('../middleware/adminauth');
 app.use(cookieParser());
 
-const adminuser = require("../modals/adminuser")
+const adminuser = require("../modals/adminuser");
+const leadForms = require('../modals/leadFrom');
 
 module.exports = function (app) {
 
     app.get('/admin',adminauth,(req,res)=>{
         res.render('./admin/admin.hbs',{title:'Admin Dashboard'})
     })
-    app.get('/admin/leads',adminauth,(req,res)=>{
-        res.render('./admin/leads.hbs',{title:'Admin Dashboard'})
+    app.get('/admin/leads',adminauth,async(req,res)=>{
+        const lead = await leadForms.find({})
+       .sort({date:-1})
+        res.render('./admin/leads.hbs',{
+            lead
+        })
     })
+   
     app.get('/admin/profile',adminauth,(req,res)=>{
-        res.render('./admin/admin-profile.hbs',{title:'Admin Dashboard'})
+        res.render('./admin/admin-profile.hbs')
     })
 
     app.post('/admin-register',(req,res) => {

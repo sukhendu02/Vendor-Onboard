@@ -23,7 +23,8 @@
   transition: 300ms ease-in-out;
   overflow: hidden;
   text-wrap: nowrap;
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
 }
 #sidebar.close{
   padding: 5px;
@@ -113,6 +114,7 @@ main{
   padding: min(30px, 7%);
   padding-left: 75px;
 }
+
 
 
 

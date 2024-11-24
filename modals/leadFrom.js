@@ -5,7 +5,7 @@ const leadFormSchema = new mongoose.Schema({
   bname: String,
   b_email: String,
   phone: String,
-  producBS: String,
+  productBS: String,
   b_type: String,
   info: String,
 
