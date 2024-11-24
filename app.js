@@ -7,7 +7,15 @@ const app = express();
 const mongoose = require("mongoose");
 const PORT = 3000;
 
+const session = require('express-session');
+const flash = require('express-flash');
+
 var bodyParser = require("body-parser");
+
+const cookieParser = require('cookie-parser')
+app.use(cookieParser());
+
+
 //  BODY PARSER
 app.use(
   bodyParser.urlencoded({
@@ -16,47 +24,96 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// MODALS IMPORT
-const leadForm = require("./modals/leadFrom");
+// env IMPORT
+
+
+
+const dotenv = require('dotenv')
+dotenv.config({path:'./config.env'})
+
 
 // ROUTES IMPORT
-////////
-// const formRoute = require("./Routes/formRoute");
-const formRoute = require("./Routes/formRoute")(app);
 
+
+
+// REQUIRE SESSION
+// const session = require('express-session');
+// app.set('trust proxy', 1) // trust first proxy
+// app.use(session({
+//   secret: process.env.SESSIONFLASH,
+//   resave: false,
+//   saveUninitialized: true
+// }));
+
+
+// // REQUIRE FLASH
+// const flash = require('express-flash');
+// app.use(flash());
+
+
+// // Make flash messages available to all views
+// app.use((req, res, next) => {
+//   res.locals.messages = req.flash();
+//   // res.locals.failed = req.flash('failed');
+//   next();
+// });
+
+
+
+
+
+// CONNECTION TO DATA-BASE OR MONGODB THROUGH MONGOOSE
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri =
-  "mongodb+srv://sukhendu:sukhendu@project1.ccrjnjw.mongodb.net/?retryWrites=true&w=majority&appName=Project1";
+const uri =process.env.MONGODBURL
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
+  const { EFAULT } = require("constants");
+  const { error, Console } = require("console");
+ 
+  
+  mongoose.connect(uri,{useNewUrlParser:true, useUnifiedTopology:true})
+  .then( () => console.log("successful"))
+  .catch((err) => console.log(err));
+  
+  
+
+  // REQUIRE SESSION
+
+
+app.use(express.urlencoded({ extended: true }));
+app.use(session({
+    secret: process.env.SESSIONFLASH,
+    resave: false,
+    saveUninitialized: true
+}));
+
+
+// REQUIRE FLASH
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.messages = req.flash();
+  next();
 });
 
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!"
-    );
-  } finally {
-    // Ensures that the client will close when you finish/error
-    await client.close();
-  }
-}
-run().catch(console.dir);
+
+
+  
+const leadForms = require("./modals/leadFrom");
+
+
+const formRoute = require("./Routes/formRoute")(app);
+const admin = require("./Routes/admin")(app);
+
+
+
+
+
+
 
 // Set the viewsdf engine to hbs
 app.set("view engine", "hbs");
 
-// MongoDB Connection
+
 
 // Set the views directory
 app.set("views", path.join(__dirname, "views"));
@@ -67,10 +124,15 @@ hbs.registerPartials(path.join(__dirname, "views", "partials"));
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, "public")));
 
+
+
 // Define a route
 app.get("/", (req, res) => {
-  res.render("index", { title: "Welcome", message: "Hello, World!" });
+  console.log('Flash message set:', req.flash('success')); // Should l
+  res.render("index.hbs");
 });
+
+
 
 // Start the server
 app.listen(PORT, () => {
