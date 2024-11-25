@@ -29,20 +29,7 @@
       word-wrap: break-word; /* Ensures long words break onto the next line */
       overflow-wrap: anywhere;
         }
-          th:nth-child(1), td:nth-child(1) {
-     /* First column takes 30% of the table width */
-  }
-
-  th:nth-child(2), td:nth-child(2) {
-   width: 15%;
-  }
-
-  th:nth-child(3), td:nth-child(3) {
-    width: 25%;
-  }       
-  th:nth-child(4), td:nth-child(4) {
-    width: 8%;
-  }       
+     
         table.table-bordered.dataTable{
             padding-top: 20px;
             font-size: 14px;
@@ -76,6 +63,29 @@
       .highlight {
         background: #ff9;
       }
+
+      @media only screen and (min-width: 768px) {
+               th:nth-child(1), td:nth-child(1) {
+     /* First column takes 30% of the table width */
+  }
+
+  th:nth-child(2), td:nth-child(2) {
+   width: 15%;
+  }
+
+  th:nth-child(3), td:nth-child(3) {
+    width: 25%;
+  }       
+  th:nth-child(4), td:nth-child(4) {
+    width: 8%;
+  }       
+  th:nth-child(7), td:nth-child(7) {
+    width: 15%;
+  }       
+  th:nth-child(8), td:nth-child(8) {
+    width: 5%;
+  }   
+      }
       @media only screen and (max-width: 767px) {
         /* Force table to not be like tables anymore */
         table,
@@ -87,6 +97,7 @@
           display: block;
           /* Hide table headers (but not display: none;, for accessibility) */
         }
+        
         thead tr,
         tfoot tr {
           position: absolute;
@@ -124,22 +135,25 @@
           content: "#";
         }
         td:nth-of-type(2):before {
-          content: "Question";
+          content: "Name";
         }
         td:nth-of-type(3):before {
-          content: "Topic";
+          content: "Email";
         }
         td:nth-of-type(4):before {
-          content: "Difficulty";
+          content: "Phone";
         }
         td:nth-of-type(5):before {
-          content: "View";
+          content: "Best Product";
         }
         td:nth-of-type(6):before {
-          content: "Update";
+          content: "Bussiness Type";
         }
         td:nth-of-type(7):before {
-          content: "Delete";
+          content: "Info";
+        }
+        td:nth-of-type(8):before {
+          content: "Status";
         }
         .dataTables_length {
           display: none;
@@ -186,7 +200,43 @@ div#DataTables_Table_0_info{
     
     
         }
-       
+a.paginate_button {
+    padding: 8px;
+    margin: 4px;
+    color: #5e63ff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+        .status-icon i{
+        font-size: 24px;
+        color:#5e63ff;
+        }
+a#mytable_next,a#mytable_previous{
+background-color: #5e63ff;
+    color: #fff;
+    border-radius: 50%;
+    padding: 16px;
+}
+
+        a#DataTables_Table_0_previous,a#DataTables_Table_0_next {
+    background-color: #5e63ff;
+    color: #fff;
+    border-radius: 50%;
+    padding: 16px;
+}
+   a.paginate_button.current {
+    color: grey;
+}  
+
+.download-btn button{
+    background-color:#5e63ff;
+    color:#fff;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+}
     </style>
 
 </head>
@@ -196,9 +246,9 @@ div#DataTables_Table_0_info{
     <main>
         <div class="container wrapper my-4">
             <h3 class="my-3">Leads</h3>
-            <table class="table table-bordered table-hover" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
+            <table class="table table-bordered table-hover" id="mytable" cellspacing="0" width="100%">
+                <thead class="">
+                    <tr style="background-color:#5e63ff !important" >
                         <th style="width: 12px;" class="col-md">#</th>
                         <th class="col-md-2">Name</th>
                         <th class="col-md-2">Email</th>
@@ -228,7 +278,7 @@ div#DataTables_Table_0_info{
                     {{#each lead}}
                     <tr>
 
-                        <td>hjhkj</td>
+                        <td>{{inc @index}}</td>
                         <td>{{bname}}</td>
                         <td>{{b_email}}</td>
                         <td>{{phone}}</td>
@@ -243,7 +293,7 @@ div#DataTables_Table_0_info{
                         </td>
                           
                         <td class="text-center">
-                            <a href="" type="button"><i class="fa-solid fa-circle-dot"></i></a>
+                            <a class="status-icon" href="" type="button"><i class="fa-solid fa-circle-dot"></i></a>
                         </td>
                     </tr>
 
@@ -256,7 +306,11 @@ div#DataTables_Table_0_info{
 
                 </tbody>
             </table>
+
         </div>
+            <div class="download-btn">
+                <button onclick="downloadExcel()">Download as Excel</button>
+            </div>
 
 
     </main>
@@ -271,6 +325,9 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 crossorigin="anonymous"
 ></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <script>
     $(document).ready(function () {
         $(".table").DataTable({
@@ -295,6 +352,14 @@ crossorigin="anonymous"
           }
         });
       });
+
+function downloadExcel(){
+  var table = document.getElementById("mytable");
+
+  var workbook=XLSX.utils.table_to_book(table,{sheet:"Leads"});
+
+  XLSX.writeFile(workbook,"leads.xlsx");
+}
 </script>
 </body>
 

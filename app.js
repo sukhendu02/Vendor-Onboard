@@ -7,14 +7,12 @@ const app = express();
 const mongoose = require("mongoose");
 const PORT = 3000;
 
-const session = require('express-session');
-const flash = require('express-flash');
+const session = require("express-session");
 
 var bodyParser = require("body-parser");
 
-const cookieParser = require('cookie-parser')
+const cookieParser = require("cookie-parser");
 app.use(cookieParser());
-
 
 //  BODY PARSER
 app.use(
@@ -26,15 +24,10 @@ app.use(bodyParser.json());
 
 // env IMPORT
 
-
-
-const dotenv = require('dotenv')
-dotenv.config({path:'./config.env'})
-
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 
 // ROUTES IMPORT
-
-
 
 // REQUIRE SESSION
 // const session = require('express-session');
@@ -45,11 +38,9 @@ dotenv.config({path:'./config.env'})
 //   saveUninitialized: true
 // }));
 
-
 // // REQUIRE FLASH
 // const flash = require('express-flash');
 // app.use(flash());
-
 
 // // Make flash messages available to all views
 // app.use((req, res, next) => {
@@ -58,65 +49,52 @@ dotenv.config({path:'./config.env'})
 //   next();
 // });
 
-
-
-
-
 // CONNECTION TO DATA-BASE OR MONGODB THROUGH MONGOOSE
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri =process.env.MONGODBURL
+const uri = process.env.MONGODBURL;
 
-  const { EFAULT } = require("constants");
-  const { error, Console } = require("console");
- 
-  
-  mongoose.connect(uri,{useNewUrlParser:true, useUnifiedTopology:true})
-  .then( () => console.log("successful"))
+const { EFAULT } = require("constants");
+const { error, Console } = require("console");
+
+mongoose
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("successful"))
   .catch((err) => console.log(err));
-  
-  
 
-  // REQUIRE SESSION
-
+// REQUIRE SESSION
 
 app.use(express.urlencoded({ extended: true }));
-app.use(session({
+app.use(
+  session({
     secret: process.env.SESSIONFLASH,
     resave: false,
-    saveUninitialized: true
-}));
-
+    saveUninitialized: true,
+  })
+);
 
 // REQUIRE FLASH
+const flash = require("express-flash");
 app.use(flash());
 
-app.use((req, res, next) => {
-  res.locals.messages = req.flash();
-  next();
-});
+// app.use((req, res, next) => {
+//   res.locals.messages = req.flash();
+//   next();
+// });
 
-
-
-  
 const leadForms = require("./modals/leadFrom");
-
 
 const formRoute = require("./Routes/formRoute")(app);
 const admin = require("./Routes/admin")(app);
 
-
-
-
-
-
-
 // Set the viewsdf engine to hbs
 app.set("view engine", "hbs");
 
-
-
 // Set the views directory
 app.set("views", path.join(__dirname, "views"));
+
+hbs.registerHelper("inc", function (value, options) {
+  return parseInt(value) + 1;
+}); //
 
 // Register the partials directory
 hbs.registerPartials(path.join(__dirname, "views", "partials"));
@@ -124,15 +102,11 @@ hbs.registerPartials(path.join(__dirname, "views", "partials"));
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, "public")));
 
-
-
 // Define a route
 app.get("/", (req, res) => {
-  console.log('Flash message set:', req.flash('success')); // Should l
+  // console.log("Flash message set:", req.flash("success")); // Should l
   res.render("index.hbs");
 });
-
-
 
 // Start the server
 app.listen(PORT, () => {

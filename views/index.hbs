@@ -377,12 +377,14 @@
                         <h5 class="text-center">Fill out the below form! We will get back to you!</h5>
 
                         <form class="px-5 py-3" action="/leadform" method="POST">
-                            {{#if messages.success}}
+                        
+                            {{#if messages.submited}}
                             <div class="alert" id="success-alert" role="alert">
                                 <i class="fa-solid fa-circle-check"></i> Thank You for your interest. We will get back
                                 to you!
                             </div>
                             {{/if}}
+       
                             {{#if messages.failed}}
                             <div class="alert alert-dark" id="failrd-alert" role="alert">
                                 <i class="fa-solid fa-circle-exclamation"></i> Oops Can't Proceed! Please try again

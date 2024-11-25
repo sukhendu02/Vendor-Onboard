@@ -4,8 +4,8 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
-const dotenv = require('dotenv')
-dotenv.config({path:'./config.env'})
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 
 const leadForms = require("../modals/leadFrom");
 
@@ -17,10 +17,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
-
 module.exports = function (app) {
-
-
   // Submit form Route
   app.post("/leadform", async (req, res) => {
     const { bname, b_email, b_type, phone, productBS, info } = req.body;
@@ -36,25 +33,14 @@ module.exports = function (app) {
       b_type,
       info,
     });
-   
 
     try {
-     
       const leadformsave = await lead.save();
-      req.flash('success','something')
-      console.log('Flash message set:', req.flash('success')); // Should l
-      res.redirect('/#form')
-
+      req.flash("submited", "Form submitted");
+      res.redirect("/#form");
     } catch (error) {
-      req.flash('failed','Failed to submit form')
-      res.status(500).redirect('/#form');
-      
-     
+      req.flash("failed", "Failed to submit form");
+      res.status(500).redirect("/#form");
     }
-
-
-
-      
-    
   });
 };
