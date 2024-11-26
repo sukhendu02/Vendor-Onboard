@@ -49,16 +49,16 @@ lottie-player {
   border: 2px solid var(--secondary-color);
 }
 
-.what-we-do{
-  background-color: #F5F7FF;
+.what-we-do {
+  background-color: #f5f7ff;
   /* margin-bottom: 40px; */
   padding: 60px;
 }
-.what-we-do h3{
+.what-we-do h3 {
   color: rgb(91, 91, 91);
 }
 
-.some-body{
+.some-body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -66,73 +66,79 @@ lottie-player {
   padding: 4px;
   padding-left: 8px;
   grid-row-gap: 30px;
-  }
-  
-  .some-body .div1 { grid-area: 1 / 1 / 2 / 2;
-    background-color: #fff;
-    padding: 12px;
-    border-radius: 12px; }
-  .some-body .div2 { grid-area: 1 / 2 / 2 / 3;
-  background-color: #fff;
-    padding: 12px;
-    border-radius: 12px;
-   }
-  .some-body .div3 { grid-area: 1 / 3 / 2 / 4; 
-  background-color: #fff;
-    padding: 12px;
-    border-radius: 12px;
-  }
-  .some-body .div4 { grid-area: 2 / 1 / 3 / 2; 
-  background-color: #fff;
-    padding: 12px;
-    border-radius: 12px;
-  }
-  .some-body .div5 { grid-area: 2 / 2 / 3 / 3; 
-  background-color: #fff;
-    padding: 12px;
-    border-radius: 12px;
-  }
-  .some-body .div6 { grid-area: 2 / 3 / 3 / 4; 
-  background-color: #fff;
-    padding: 12px;
-    border-radius: 12px;
-  }
-  .some-body .div7 { grid-area: 2 / 3 / 3 / 4; 
-  background-color: #fff;
-    padding: 12px;
-    border-radius: 12px;
-  }
-      
-    
-  .some-body .div1 p, .some-body .div2 p, .some-body .div3 p, .some-body .div4 p, .some-body .div5 p, .some-body .div6 p {
-    font-size: 14px;
-    color: #3e4963;
-}
-  .some-body .div1 h6, .some-body .div2 h6, .some-body .div3 h6, .some-body .div4 h6, .some-body .div5 h6, .some-body .div6 h6 {
-    /* font-size: 14px; */
-    color: var(--secondary-color);
 }
 
-
-.some-body img
-  {
-    width: 60px;
-    margin: 8px;
-    padding: 12px;
-    /* border: 2px solid var(--primary-acent); */
-    /* box-shadow: var(--primary-acent) 0px 3px 8px; */
-    box-shadow: var(--primary-acent) 0px 1px 4px;
-    border-radius: 16px;
-
+.some-body .div1 {
+  grid-area: 1 / 1 / 2 / 2;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+}
+.some-body .div2 {
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+}
+.some-body .div3 {
+  grid-area: 1 / 3 / 2 / 4;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+}
+.some-body .div4 {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+}
+.some-body .div5 {
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+}
+.some-body .div6 {
+  grid-area: 2 / 3 / 3 / 4;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+}
+.some-body .div7 {
+  grid-area: 2 / 3 / 3 / 4;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
 }
 
+.some-body .div1 p,
+.some-body .div2 p,
+.some-body .div3 p,
+.some-body .div4 p,
+.some-body .div5 p,
+.some-body .div6 p {
+  font-size: 14px;
+  color: #3e4963;
+}
+.some-body .div1 h6,
+.some-body .div2 h6,
+.some-body .div3 h6,
+.some-body .div4 h6,
+.some-body .div5 h6,
+.some-body .div6 h6 {
+  /* font-size: 14px; */
+  color: var(--secondary-color);
+}
 
-
-
-
-
-
-        
+.some-body img {
+  width: 60px;
+  margin: 8px;
+  padding: 12px;
+  /* border: 2px solid var(--primary-acent); */
+  /* box-shadow: var(--primary-acent) 0px 3px 8px; */
+  box-shadow: var(--primary-acent) 0px 1px 4px;
+  border-radius: 16px;
+}
 
 .pitch-section {
   justify-content: space-evenly;
@@ -770,11 +776,9 @@ label:last-child span {
   }
 }
 
-
-
 /* alerts  */
 
-#success-alert{
+#success-alert {
   color: #fff;
   width: fit-content;
   background-color: var(--primary-acent) !important;
@@ -920,14 +924,37 @@ label:last-child span {
     font-size: 12px;
   }
 
-  .what-we-do{
+  .what-we-do {
     padding: 8px !important;
   }
-  .some-body{
+  .some-body {
     grid-row-gap: 16px;
     grid-column-gap: 4px;
   }
-  .some-body img{
-    width: 40px;
+  .some-body img {
+    width: 50px;
+  }
+  .some-body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(3, 1fr) !important;
+  }
+  .some-body .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .some-body .div2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .some-body .div3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .some-body .div4 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .some-body .div5 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .some-body .div6 {
+    grid-area: 3 / 2 / 4 / 3;
   }
 }
