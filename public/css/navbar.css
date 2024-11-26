@@ -19,6 +19,33 @@
   --search-bar: #f2f2f2;
   --search-text: #010718;
 }
+.badger{
+  /* background-color: #4db6ac; */
+}
+
+.badge {
+  /* font-size: 3rem; */
+  /* font-weight: bold; */
+  background-color: grey !important;
+  background: linear-gradient(90deg, #ff7d1a, #ff1a7d, #1aff7d, #1a7dff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 3s infinite;
+  padding: 2px;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 body {
   /* height: 100vh; */
