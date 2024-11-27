@@ -82,6 +82,7 @@ app.use(flash());
 // });
 
 const leadForms = require("./modals/leadFrom");
+const sendEmail = require("./middleware/sendEmail");
 
 const formRoute = require("./Routes/formRoute")(app);
 const admin = require("./Routes/admin")(app);
@@ -105,6 +106,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // Define a route
 app.get("/", (req, res) => {
   // console.log("Flash message set:", req.flash("success")); // Should l
+
+  // sendEmail("sukhendumandal0210@gmail.com")
   res.render("index.hbs");
 });
 

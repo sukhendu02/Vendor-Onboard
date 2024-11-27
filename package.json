@@ -21,6 +21,8 @@
     "express-session": "^1.18.1",
     "hbs": "^4.2.0",
     "jsonwebtoken": "^9.0.2",
+    "mailgun-js": "^0.22.0",
+    "mailgun.js": "^10.2.4",
     "mongodb": "^6.10.0",
     "mongoose": "^8.8.2",
     "nodemon": "^3.1.7"
