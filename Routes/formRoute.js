@@ -20,6 +20,10 @@ app.use(bodyParser.json());
 module.exports = function (app) {
   // Submit form Route
   app.post("/leadform", async (req, res) => {
+    if(req.body.spam_email){
+      req.flash("failed","Spam Detected")
+      return res.redirect('/')
+    }
     const { bname, b_email, b_type, phone, productBS, info } = req.body;
 
     if (bname == "" || b_email == "" || phone == "" || b_type == "") {
