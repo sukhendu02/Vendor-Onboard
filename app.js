@@ -111,6 +111,10 @@ app.get("/", (req, res) => {
   res.render("index.hbs");
 });
 
+
+app.get('*',(req,res)=>{
+  res.render('error.hbs')
+})
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
